@@ -1,0 +1,48 @@
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+jspm_packages/
+bower_components/
+
+# Environment variable files
+.env
+
+# Compiled files
+*.out
+*.class
+
+# IDE files
+.vscode/
+.idea/
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Ignore images in the "pictures" folder
+/pictures/*.png
+
+# Backup files
+*.bak
+*.swp
+
+# Build artifacts
+dist/
+build/
+
+# Ignore package-lock.json or yarn.lock (if not required)
+package-lock.json
+yarn.lock
+
+# Others
+*.tmp
+*.cache
+*.log
