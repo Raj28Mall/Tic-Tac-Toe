@@ -18,40 +18,40 @@
 
     <div class=" justify-center w-[100vw]]">
         <div class="grid justify-center grid-cols-[repeat(3,170px)] gap-x-[0.4rem] gap-y-[0.5rem] my-20">
-            <div class="bg-white py-16 rounded-xl text-center cell"></div>
-            <div class="bg-white py-16 rounded-xl text-center cell"></div>
-            <div class="bg-white py-16 rounded-xl text-center cell"></div>
-            <div class="bg-white py-16 rounded-xl text-center cell"></div>
-            <div class="bg-white py-16 rounded-xl text-center cell"></div>
-            <div class="bg-white py-16 rounded-xl text-center cell"></div>
-            <div class="bg-white py-16 rounded-xl text-center cell"></div>
-            <div class="bg-white py-16 rounded-xl text-center cell"></div>
-            <div class="bg-white py-16 rounded-xl text-center cell"></div>
+            <div class="bg-white py-16 rounded-xl text-center cell text-balance text-lg" id="rc00"></div>
+            <div class="bg-white py-16 rounded-xl text-center cell text-balance text-lg" id="rc01"></div>
+            <div class="bg-white py-16 rounded-xl text-center cell text-balance text-lg" id="rc02"></div>
+            <div class="bg-white py-16 rounded-xl text-center cell text-balance text-lg" id="rc10"></div>
+            <div class="bg-white py-16 rounded-xl text-center cell text-balance text-lg" id="rc11"></div>
+            <div class="bg-white py-16 rounded-xl text-center cell text-balance text-lg" id="rc12"></div>
+            <div class="bg-white py-16 rounded-xl text-center cell text-balance text-lg" id="rc20"></div>
+            <div class="bg-white py-16 rounded-xl text-center cell text-balance text-lg" id="rc21"></div>
+            <div class="bg-white py-16 rounded-xl text-center cell text-balance text-lg" id="rc22"></div>
         </div>
     </div>
 
-    <div>
-        <dialog id="modal">
-            <form action="#" method="dialog" id="form">
-                <fieldset>
-                    <legend>Welcome to Tic-Tac-Toe</legend>
-                    <div class="flex space-x-10">
-                        <div>
-                            <label for="player1">Name of Player 1</label>
-                            <input type="text" required id="player1">
-                        </div>
-                        <div>
-                            <label for="player2">Name of Player 2</label>
-                            <input type="text" required id="player2">
-                        </div>
+    
+    <dialog id="modal">
+        <form action="#" method="dialog" id="form">
+            <fieldset>
+                <legend>Welcome to Tic-Tac-Toe</legend>
+                <div class="flex space-x-10">
+                    <div>
+                        <label for="player1">Name of Player 1</label>
+                        <input type="text" required id="player1">
                     </div>
+                    <div>
+                        <label for="player2">Name of Player 2</label>
+                        <input type="text" required id="player2">
+                    </div>
+                </div>
 
-                </fieldset>
+            </fieldset>
 
-                <button type="button" id="submit_button">Play</button>
-            </form>
-        </dialog>
-    </div>
+            <button class="bg-green-600 px-4 py-2 hover:bg-green-300 active:bg-orange-500" type="button" id="submit_button">Play</button>
+        </form>
+    </dialog>
+    
 </body>
 
 </html>
