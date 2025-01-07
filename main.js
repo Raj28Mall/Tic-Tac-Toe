@@ -21,14 +21,13 @@ ScreenController
 const Gameboard = (() => {
     const size = 3;
     let board = []
-    const setGameUp=()=>{
-        for (let i = 0; i < size; i++) {
-            board[i] = []
-            for (let j = 0; j < size; j++) {
-                board[i][j] = null;
-            }
+    for (let i = 0; i < size; i++) {
+        board[i] = []
+        for (let j = 0; j < size; j++) {
+            board[i][j] = null;
         }
     }
+
 
     const getBoard = () => board;
 
@@ -83,21 +82,21 @@ const Gameboard = (() => {
         if (mainDiagWinner === true || sideDiagWinner === true) {
             return board[1][1];
         }
-        
-        let gameDraw=true;
-        for(let i=0; i<size; i++){
-            for(let j=0; j<size; j++){
-                if(board[i][j]==null){
-                    gameDraw=false;
+
+        let gameDraw = true;
+        for (let i = 0; i < size; i++) {
+            for (let j = 0; j < size; j++) {
+                if (board[i][j] == null) {
+                    gameDraw = false;
                 }
             }
         }
-        if(gameDraw){
+        if (gameDraw) {
             return 'draw';
         }
         return null;
     })
-    return { getBoard, makeMove, checkWinner };
+    return { getBoard, makeMove, checkWinner, resetBoard };
 })()
 
 const GameController = (() => {
@@ -161,17 +160,16 @@ document.addEventListener('DOMContentLoaded', () => {
         submitBtn.addEventListener('click', () => {
             const name1 = player1name.value.trim();
             const name2 = player2name.value.trim();
-        
+
             if (name1 && name2) {
-                game = GameController(name1, name2); 
-                Gameboard.setGameUp(); 
+                game = GameController(name1, name2);
                 modal.close();
-                updateScreen(); 
+                updateScreen();
             } else {
                 alert("Please provide names for both players.");
             }
         });
-        
+
 
         const player1div = document.querySelector(".player1");
         const player2div = document.querySelector(".player2");
@@ -181,15 +179,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const row = parseInt(cell.id[2]);
             const col = parseInt(cell.id[3]);
             cell.addEventListener('click', () => {
-                const result = game.playRound(row, col); 
+                const result = game.playRound(row, col);
                 if (result) {
                     if (result === 'draw') {
                         alert("It's a draw!");
-                        Gameboard.resetBoard(); 
+                        Gameboard.resetBoard();
                     } else {
                         alert(`${result} wins!`);
-                        updateScores(); 
-                        Gameboard.resetBoard(); 
+                        updateScores();
+                        Gameboard.resetBoard();
                     }
                 }
                 updateScreen();
@@ -203,7 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const updateScreen = () => {
-            const board = game.getBoard(); 
+            const board = game.getBoard();
             cells.forEach((cell) => {
                 const row = parseInt(cell.id[2], 10);
                 const col = parseInt(cell.id[3], 10);
